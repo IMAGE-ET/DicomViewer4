@@ -20,4 +20,4 @@ libdicomutils.so (or .dll) based on dcmtk (www.dcmtk.org).
 Contact
 -------
 
-martinrame<at>yahoo.com
+martinrame at yahoo.com
