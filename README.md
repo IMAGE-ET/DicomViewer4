@@ -17,3 +17,7 @@ Dependencies
 For loading and decompressing dicom files, the viewer uses a shared library,
 libdicomutils.so (or .dll) based on dcmtk (www.dcmtk.org).
 
+Contact
+-------
+
+martinrame<at>yahoo.com
