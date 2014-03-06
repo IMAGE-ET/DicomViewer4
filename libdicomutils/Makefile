@@ -66,7 +66,7 @@ OBJECTS = $(ROOTPATH)/oflog/libsrc/*.o \
         $(ROOTPATH)/dcmnet/libsrc/*.o
 	
 dicomutils-2.0-so: dicomutils-2.0.o
-	g++ -fPIC -O3 -shared -o libdicomutils-2.0.so dicomutils-2.0.o $(LIBRERIAS) $(LOCALLIBS) 
+	g++ -fPIC -O3 -shared -o libdicomutils-2.0.so dicomutils-2.0.o $(LIBRERIAS) $(OBJECTS) $(LOCALLIBS) 
 
 dicomutils-2.0.o: dicomutils-2.0.cpp
 	g++ $(DEFINES) -fPIC $(INCLUDES) $(LOCALLIBS) $(LIBRERIAS) -c dicomutils-2.0.cpp -g
