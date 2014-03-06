@@ -7,14 +7,11 @@ DEFINES = -DHAVE_CONFIG_H
 CXXFLAGS = -O2 -static -Wall -shared -pedantic $(DEFINES)
 #CXXFLAGS = $(DEFINES)
 
-
 # Windows con MingW/MSYS
 #ROOTPATH = dcmtk
 
 # Linux
-ROOTPATH = /home/leonardo/Desarrollo/dcmtk/dcmtk-3.6.0-shared
-#ROOTPATH = /home/leonardo/Desarrollo/dcmtk/dcmtk-3.6.1/dcmtk-3.6.1_20120831
-#ROOTPATH = /home/leonardo/Desarrollo/dcmtk/dcmtk-3.6.0
+ROOTPATH = dcmtk-3.6.0
 
 
 INCLUDES = -I$(ROOTPATH)/config/include \
