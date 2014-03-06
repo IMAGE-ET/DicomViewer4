@@ -6,7 +6,7 @@ images, extract tags and open DICOMDIR files. It's based on the great Open
 Source, and multiplatform C++ DCMTK library.
 
 Compiling libDicomUtils
-=======================
+-----------------------
 
 1) Download dcmtk-3.6.0:
 
