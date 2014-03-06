@@ -25,7 +25,7 @@ config/rootconf
 ./configure --without-libxml --without-openssl --without-libpng --without-libtiff
 vim config/Makefile.def 
 
-# Replace the default values with this:
+Replace the default values with this:
 
 CFLAGS= -fPIC -O2
 CXXFLAGS= -fPIC -O2
@@ -34,22 +34,22 @@ ARFLAGS= -shared -o
 LIBEXT= so
 RANLIB= :
 
-# Save and close
+Save and close
 
 make
 
-# Note: on Ubuntu 12.04 I've got some pthread related errors and I had to do
-# this trick:
-# After the first make (the one that display the errors), edit the file
-# config/Makefile.def again, this time replacing the original LIBS with this:
+Note: on Ubuntu 12.04 I've got some pthread related errors and I had to do
+this trick:
+After the first make (the one that display the errors), edit the file
+config/Makefile.def again, this time replacing the original LIBS with this:
 
 LIBS = -lpthread -lrt -lnsl 
 
-# switching -lrt with -lpthread
+switching -lrt with -lpthread
 
 then "make" again.
 
-# Note: if anything went wrong, please refer to http://forum.dcmtk.org
+Note: if anything went wrong, please refer to http://forum.dcmtk.org
 
 4) Compile with builtindict:
 
