@@ -14,10 +14,16 @@ specially when dealing with big studies such actual CT scans and XA
 Dependencies
 ------------
 
+####DCMTK
+
 For loading and decompressing dicom files, the viewer uses a shared library,
 libdicomutils.so (or .dll) based on dcmtk (www.dcmtk.org). 
 
 Please go to [libDicomUtils](libdicomutils) for more info.
+
+####fpGui
+
+Please go to [fpGui](fpgui) for more info.
 
 Contact
 -------
