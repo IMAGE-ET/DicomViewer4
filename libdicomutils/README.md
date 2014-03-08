@@ -61,3 +61,11 @@ Note: if anything went wrong, please refer to http://forum.dcmtk.org
 do a "make" again.
 
 6) Now it's time to compile libDicomUtils.so
+
+You must be at the libdicomutils directory (DicomViewer4/libdicomutils), then just do:
+
+    make dicomutils-2.0.so
+    
+This will create the shared library libdicomutils-2.0.so
+    
+7) Done!.
