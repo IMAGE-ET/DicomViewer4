@@ -25,7 +25,7 @@ Compiling libDicomUtils
 
 3) cd dcmtk-3.6.1_20131114
 
-3) cmake-gui
+    cmake-gui
 
 Select BUILD_SHARED_LIBS, then configure and generate. Then close the app.
 
