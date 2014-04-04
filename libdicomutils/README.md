@@ -27,7 +27,7 @@ Compiling libDicomUtils
 
 Select BUILD_SHARED_LIBS, then configure and generate. Then close the app.
 
-!https://github.com/leonardorame/DicomViewer4/blob/master/libdicomutils/cmake.png!
+!https://raw.githubusercontent.com/leonardorame/DicomViewer4/master/libdicomutils/cmake.png!
 
     make
 
