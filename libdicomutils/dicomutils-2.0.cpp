@@ -1,7 +1,4 @@
 #include <dcmtk/config/osconfig.h>
-#ifndef _WIN32
-#include <dcmtk/config/cfunix.h>
-#endif
 #include <dcmtk/oflog/oflog.h>
 #include <dcmtk/oflog/nullap.h>
 #include <cstring>
@@ -1207,8 +1204,8 @@ extern "C" {
   void initDicomCFind(void * &cfind)
   {
       cfind = new DcmFindSCU();
-      log4cplus::SharedAppenderPtr nullapp(new log4cplus::NullAppender());
-      log4cplus::Logger log = log4cplus::Logger::getRoot();
+      dcmtk::log4cplus::SharedAppenderPtr nullapp(new dcmtk::log4cplus::NullAppender());
+      dcmtk::log4cplus::Logger log = dcmtk::log4cplus::Logger::getRoot();
       log.removeAllAppenders();
       log.addAppender(nullapp);
   }

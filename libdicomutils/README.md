@@ -35,7 +35,7 @@ Select BUILD_SHARED_LIBS, then configure and generate. Then close the app.
 
 You must be at the libdicomutils directory (DicomViewer4/libdicomutils), then just do:
 
-    make dicomutils-2.0.so
+    make dicomutils-2.0
     
 This will create the shared library libdicomutils-2.0.so
     
