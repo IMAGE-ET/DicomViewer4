@@ -5,62 +5,33 @@ libDicomUtils is a shared library used by DicomViewer4 to open compressed
 images, extract tags and open DICOMDIR files. It's based on the great Open
 Source, and multiplatform C++ DCMTK library.
 
+Prerequisites
+--------------
+
+1) CMake and CMake Gui. On Debian based systems:
+
+    sudo apt-get install cmake cmake-gui
+
 Compiling libDicomUtils
 -----------------------
 
-1) Download dcmtk-3.6.0:
+1) Download dcmtk's latest snapshot
 
-    ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk360/dcmtk-3.6.0.tar.gz
+    http://dicom.offis.de/download/dcmtk/snapshot/dcmtk-3.6.1_20131114.tar.gz
 
 2) Uncompress:
+    
+    tar xvfz dcmtk-3.6.1_20131114.tar.gz
 
-    tar xvfz dcmtk-3.6.0.tar.gz
+3) cmake-gui
 
-3) As explained in DCMTK FAQ #13, edit the config/Makefile.def file:
+Select BUILD_SHARED_LIBS, then configure and generate. Then close the app.
 
-FAQ #13: http://forum.dcmtk.org/viewtopic.php?f=4&t=19&sid=3fe4f140b949978e074a598e232c5b85
-
-    cd dcmtk-3.6.0
-    config/rootconf
-    ./configure --without-libxml --without-openssl --without-libpng --without-libtiff
-    vim config/Makefile.def 
-
-Replace the default values with this:
-
-    CFLAGS= -fPIC -O2
-    CXXFLAGS= -fPIC -O2
-    AR= gcc
-    ARFLAGS= -shared -o
-    LIBEXT= so
-    RANLIB= :
-
-Save and close
+!cmake.png!
 
     make
 
-Note: on Ubuntu 12.04 I've got some pthread related errors and I had to do
-this trick:
-After the first make (the one that display the errors), edit the file
-config/Makefile.def again, this time replacing the original LIBS with this:
-
-    LIBS = -lpthread -lrt -lnsl 
-
-switching -lrt with -lpthread
-
-then "make" again.
-
-Note: if anything went wrong, please refer to http://forum.dcmtk.org
-
-4) Compile with builtindict:
-
-    cd dcmdata/libsrc
-    make builtindict
-    cd ../..
-
-5) I'm not really sure this step is required, but anyway, let's
-do a "make" again.
-
-6) Now it's time to compile libDicomUtils.so
+4) Now it's time to compile libDicomUtils.so
 
 You must be at the libdicomutils directory (DicomViewer4/libdicomutils), then just do:
 
@@ -68,4 +39,4 @@ You must be at the libdicomutils directory (DicomViewer4/libdicomutils), then ju
     
 This will create the shared library libdicomutils-2.0.so
     
-7) Done!.
+5) Done!.

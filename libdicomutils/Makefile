@@ -11,7 +11,7 @@ CXXFLAGS = -O2 -static -Wall -shared -pedantic $(DEFINES)
 #ROOTPATH = dcmtk
 
 # Linux
-ROOTPATH = dcmtk-3.6.0
+ROOTPATH = ~/devel/dcmtk-3.6.1_20131114
 
 
 INCLUDES = -I$(ROOTPATH)/config/include \
