@@ -317,8 +317,6 @@ var
   lFound: Boolean;
 
 begin
-  if gConfig.Overlays = '' then
-    raise Exception.Create('Text overlays file not found.');
   FTopLeftOverlay.Clear;
   FTopRightOverlay.Clear;
   FBottomLeftOverlay.Clear;

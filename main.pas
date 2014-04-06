@@ -74,6 +74,7 @@ type
     procedure Close(Sender: TObject; var CloseAction: TCloseAction);
     procedure Print;
     procedure PrintToBMP;
+    procedure LoadLibDicomUtils;
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -482,6 +483,25 @@ begin
   FViewer.ToBMP;
 end;
 
+procedure TMainForm.LoadLibDicomUtils;
+var
+  lFile: string;
+begin
+  {$ifdef unix}
+  lFile := ExtractFilePath(ParamStr(0)) + 'libdicomutils-2.0.so';
+  {$else}
+  lFile := ExtractFilePath(ParamStr(0)) + 'libdicomutils-2.0.dll';
+  {$endif}
+  if FileExists(lFile) then
+  begin
+    gLibHandle := LoadLibrary(lFile);
+    if gLibHandle <> NilHandle then
+      TLibDicomUtilsWrapperDyn.RegisterCodecs;
+  end
+  else
+    raise Exception.Create('File ' + lFile + ' not found.');
+end;
+
 constructor TMainForm.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
@@ -539,7 +559,6 @@ begin
   FViewer.OnSelect:=@ImageSelected;
   FViewer.OnAfterModeChange:=@ViewerAfterModeChange;
 
-  gConfig := TConfig.Create;
   DNDEnabled:=True;
 end;
 
@@ -563,23 +582,21 @@ end;
 procedure TMainForm.AfterCreate;
 var
   lFile: string;
+  lCloseAction: TCloseAction;
 begin
-  {$ifdef unix}
-  lFile := ExtractFilePath(ParamStr(0)) + 'libdicomutils-2.0.so';
-  {$else}
-  lFile := ExtractFilePath(ParamStr(0)) + 'libdicomutils-2.0.dll';
-  {$endif}
-  if FileExists(lFile) then
-  begin
-    gLibHandle := LoadLibrary(lFile);
-    if gLibHandle <> NilHandle then
-      TLibDicomUtilsWrapperDyn.RegisterCodecs;
+  try
+    gConfig := TConfig.Create;
+    LoadLibDicomUtils;
+    NewLayout(GetSimpleLayoutDefinition);
+    if Paramcount = 1 then
+      OpenFromParams;
+  except
+    on E: Exception do
+    begin
+      fpgApplication.ShowException(E);
+      fpgApplication.Terminate;
+    end;
   end;
-
-  NewLayout(GetSimpleLayoutDefinition);
-
-  if Paramcount = 1 then
-    OpenFromParams;
 
   {%region 'Auto-generated GUI code' -fold}
   {@VFD_BODY_BEGIN: MainForm}
@@ -591,6 +608,7 @@ begin
   {@VFD_BODY_END: MainForm}
   {%endregion}
 end;
+
 
 end.
 

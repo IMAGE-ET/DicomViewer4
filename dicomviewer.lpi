@@ -56,7 +56,6 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
-        <CommandLineParams Value="/home/leonardo/dicom/2/DICOMDIR"/>
       </local>
     </RunParams>
     <RequiredPackages Count="2">
@@ -261,11 +260,6 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <OtherUnitFiles Value="../synapse"/>
     </SearchPaths>
-    <Linking>
-      <Debugging>
-        <UseHeaptrc Value="True"/>
-      </Debugging>
-    </Linking>
     <Other>
       <CompilerMessages>
         <MsgFileName Value=""/>

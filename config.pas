@@ -17,7 +17,7 @@ type
     FOverlays: string;
     FPresets: string;
     FReadingProtocols: string;
-    procedure LoadJSon(AFile: string; var AValue: string);
+    procedure LoadJSon(AFile: string);
   public
     constructor Create;
     property ReadingProtocols: string read FReadingProtocols write FReadingProtocols;
@@ -33,35 +33,34 @@ implementation
 
 { TConfig }
 
-procedure TConfig.LoadJSon(AFile: string; var AValue: string);
+procedure TConfig.LoadJSon(AFile: string);
 var
   lStr: TStringList;
 
 begin
+  if not FileExists(AFile) then
+    raise Exception.Create('File ' + AFile + ' not found. Cannot continue.');
+
+  if not FileExists(AFile) then
+    exit;
   lStr := TStringList.Create;
   try
     lStr.LoadFromFile(AFile);
-    AValue := lStr.Text;
   finally
     lStr.Free;
   end;
 end;
 
 constructor TConfig.Create;
-var
-  lFile: string;
 begin
-  lFile := ExtractFilePath(ParamStr(0)) + 'readingprotocols.json';
-  if FileExists(lFile) then
-    LoadJSon(lFile, FReadingProtocols);
+  FReadingProtocols:= ExtractFilePath(ParamStr(0)) + 'readingprotocols.json';
+  LoadJSon(FReadingProtocols);
 
-  lFile := ExtractFilePath(ParamStr(0)) + 'overlays.json';
-  if FileExists(lFile) then
-    LoadJSon(lFile, FOverlays);
+  FOverlays:= ExtractFilePath(ParamStr(0)) + 'overlays.json';
+  LoadJSon(FOverlays);
 
-  lFile := ExtractFilePath(ParamStr(0)) + 'presets.json';
-  if FileExists(lFile) then
-    LoadJSon(lFile, FPresets);
+  FPresets := ExtractFilePath(ParamStr(0)) + 'presets.json';
+  LoadJSon(FPresets);
 
   FMammoMargin := 0;
 end;
