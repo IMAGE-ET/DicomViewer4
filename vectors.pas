@@ -65,7 +65,7 @@ var
 begin
   for lVector in Self do
   begin
-    FreeAndNil(lVector);
+    lVector.free;
   end;
   inherited Destroy;
 end;

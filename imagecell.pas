@@ -157,7 +157,7 @@ var
 begin
   for lImageCell in Self do
   begin
-    FreeAndNil(lImageCell);
+    lImageCell.free;
   end;
   inherited Destroy;
 end;

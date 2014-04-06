@@ -588,7 +588,7 @@ begin
   FFPTimer.Free;
   for lSeriePosition in FSeriesPositions do
   begin
-    FreeAndNil(lSeriePosition);
+    lSeriePosition.free;
   end;
   FSeriesPositions.Free;
   inherited Destroy;

@@ -42,7 +42,7 @@ var
 begin
   for lOverlay in Self do
   begin
-    FreeAndNil(lOverlay);
+    lOverlay.free;
   end;
 end;
 

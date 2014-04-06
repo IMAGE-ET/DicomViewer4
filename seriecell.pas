@@ -90,7 +90,7 @@ var
 begin
   for lSerieCell in Self do
   begin
-    FreeAndNil(lSerieCell);
+    lSerieCell.free;
   end;
   inherited Clear;
 end;
@@ -279,7 +279,7 @@ begin
 
   lActualValue := ImageCells.Count;
   for lCell in ImageCells do
-    FreeAndNil(lCell);
+    lCell.free;
 
   ImageCells.Clear;
 

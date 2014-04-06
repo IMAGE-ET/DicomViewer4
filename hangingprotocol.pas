@@ -131,7 +131,7 @@ var
 begin
   for lHpCell in Self do
   begin
-    FreeAndNil(lHpCell);
+    lHpCell.free;
   end;
   inherited Destroy;
 end;
@@ -200,7 +200,7 @@ var
 begin
   for lCellCondition in Self do
   begin
-    FreeAndNil(lCellCondition);
+    lCellCondition.free;
   end;
   FValidTagPaths.Free;
   inherited Destroy;
@@ -237,7 +237,7 @@ var
 begin
   for lCondition in Self do
   begin
-    FreeAndNil(lCondition);
+    lCondition.free;
   end;
   inherited Clear;
 end;
@@ -378,7 +378,7 @@ var
 begin
   for lHP in Self do
   begin
-    FreeAndNil(lHP);
+    lHP.free;
   end;
 end;
 

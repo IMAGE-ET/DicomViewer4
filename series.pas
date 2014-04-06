@@ -60,7 +60,7 @@ var
 begin
   for lSerie in Self do
   begin
-    FreeAndNil(lSerie);
+    lSerie.free;
   end;
   inherited Destroy;
 end;

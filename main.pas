@@ -241,7 +241,7 @@ exit;}
       FViewer.ViewerMode := vmNone;
       FSeriesPanel.Reset;
       for lSerie in FSeries do
-        FreeAndNil(lSerie);
+        lSerie.free;
       FSeries.Clear;
       NewLayout(GetSimpleLayoutDefinition);
 

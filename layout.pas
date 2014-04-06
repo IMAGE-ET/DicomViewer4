@@ -106,7 +106,7 @@ var
 begin
   for lCell in FCells do
   begin
-    FreeAndNil(lCell);
+    lCell.free;
   end;
   FCells.Free;
   inherited Destroy;

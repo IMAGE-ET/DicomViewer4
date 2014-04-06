@@ -140,7 +140,7 @@ var
 begin
   for lImage in Self do
   begin
-    FreeAndNil(lImage);
+    lImage.free;
   end;
   inherited Destroy;
 end;
