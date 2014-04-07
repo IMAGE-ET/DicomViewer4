@@ -1,0 +1,559 @@
+{
+   "modalities" : [
+      {
+         "DEFAULT" : {
+            "BOTTOMLEFT" : [
+               {
+                  "textlabel" : "",
+                  "value" : "LEFT",
+                  "tag" : "LEFT"
+               },
+               {
+                  "textlabel" : "",
+                  "value" : "TOP",
+                  "tag" : "TOP"
+               },
+               {
+                  "textlabel" : "",
+                  "value" : "IMAGEOFSERIES",
+                  "tag" : "IMAGEOFSERIES"
+               },
+               {
+                  "textlabel" : "Zoom: ",
+                  "value" : "ZOOM",
+                  "tag" : "ZOOM"
+               },
+               {
+                  "textlabel" : "WC: ",
+                  "value" : "WC",
+                  "tag" : "WC"
+               },
+               {
+                  "textlabel" : "WW: ",
+                  "value" : "WW",
+                  "tag" : "WW"
+               }
+            ],
+            "TOPRIGHT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0080"
+               },
+               {
+                  "textlabel" : "Serie: ",
+                  "tag" : "0020,0011"
+               },
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0060"
+               }
+            ],
+            "BOTTOMRIGHT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0018,0015"
+               }
+            ],
+            "TOPLEFT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0010,0010",
+                  "removecircumflex" : "true"
+               },
+               {
+                  "textlabel" : "ID: ",
+                  "tag" : "0010,0020"
+               },
+               {
+                  "textlabel" : "Fecha Nac: ",
+                  "tag" : "0010,0030"
+               },
+               {
+                  "textlabel" : "Acc. #: ",
+                  "tag" : "0008,0050"
+               },
+               {
+                  "textlabel" : "Fecha estudio: ",
+                  "tag" : "0008,0020"
+               },
+               {
+                  "textlabel" : "ID Estudio: ",
+                  "tag" : "0020,0010"
+               }
+            ]
+         }
+      },
+      {
+         "MG" : {
+            "CONDITIONS" : [
+               {
+                  "OVERLAYS" : {
+                     "BOTTOMLEFT" : [
+                        {
+                           "textlabel" : "Serie: ",
+                           "tag" : "0020,0011"
+                        }
+                     ],
+                     "TOPLEFT" : [
+                        {
+                           "textlabel" : "",
+                           "tag" : "0010,0010",
+                           "removecircumflex" : "true"
+                        },
+                        {
+                           "textlabel" : "ID: ",
+                           "tag" : "0010,0020"
+                        },
+                        {
+                           "textlabel" : "",
+                           "value" : "SIN INFORMACION MG"
+                        }
+                     ]
+                  },
+                  "value" : "=DigitalMammographyXRayImageStorageForProcessing",
+                  "tag" : "0008,0016"
+               },
+               {
+                  "OVERLAYS" : {
+                     "BOTTOMLEFT" : [
+                        {
+                           "textlabel" : "",
+                           "tag" : "0008,0080"
+                        },
+                        {
+                           "textlabel" : "Serie: ",
+                           "tag" : "0020,0011"
+                        },
+                        {
+                           "textlabel" : "",
+                           "tag" : "0008,0060"
+                        },
+                        {
+                           "textlabel" : "",
+                           "value" : "LEFT",
+                           "tag" : "LEFT"
+                        },
+                        {
+                           "textlabel" : "",
+                           "value" : "TOP",
+                           "tag" : "TOP"
+                        }
+                     ],
+                     "TOPLEFT" : [
+                        {
+                           "textlabel" : "",
+                           "tag" : "0010,0010",
+                           "removecircumflex" : "true"
+                        },
+                        {
+                           "textlabel" : "ID: ",
+                           "tag" : "0010,0020"
+                        },
+                        {
+                           "textlabel" : "Fecha Nac: ",
+                           "tag" : "0010,0030"
+                        },
+                        {
+                           "textlabel" : "Fecha estudio: ",
+                           "tag" : "0008,0020"
+                        },
+                        {
+                           "textlabel" : "Zoom: ",
+                           "value" : "ZOOM",
+                           "tag" : "ZOOM"
+                        },
+                        {
+                           "textlabel" : "WC: ",
+                           "value" : "WC",
+                           "tag" : "WC"
+                        },
+                        {
+                           "textlabel" : "WW: ",
+                           "value" : "WW",
+                           "tag" : "WW"
+                        },
+                        {
+                           "textlabel" : "",
+                           "tag" : "0020,0062"
+                        },
+                        {
+                           "textlabel" : "",
+                           "tag" : "0054,0220/0008,0104"
+                        }
+                     ]
+                  },
+                  "value" : "R",
+                  "tag" : "0020,0062"
+               },
+               {
+                  "OVERLAYS" : {
+                     "TOPRIGHT" : [
+                        {
+                           "textlabel" : "",
+                           "tag" : "0010,0010"
+                        },
+                        {
+                           "textlabel" : "ID: ",
+                           "tag" : "0010,0020"
+                        },
+                        {
+                           "textlabel" : "Fecha Nac: ",
+                           "tag" : "0010,0030"
+                        },
+                        {
+                           "textlabel" : "Fecha estudio: ",
+                           "tag" : "0008,0020"
+                        },
+                        {
+                           "textlabel" : "Zoom: ",
+                           "value" : "ZOOM",
+                           "tag" : "ZOOM"
+                        },
+                        {
+                           "textlabel" : "WC: ",
+                           "value" : "WC",
+                           "tag" : "WC"
+                        },
+                        {
+                           "textlabel" : "WW: ",
+                           "value" : "WW",
+                           "tag" : "WW"
+                        },
+                        {
+                           "textlabel" : "",
+                           "tag" : "0020,0062"
+                        },
+                        {
+                           "textlabel" : "",
+                           "tag" : "0054,0220/0008,0104"
+                        }                     ],
+                     "BOTTOMRIGHT" : [
+                        {
+                           "textlabel" : "",
+                           "tag" : "0008,0080"
+                        },
+                        {
+                           "textlabel" : "Serie: ",
+                           "tag" : "0020,0011"
+                        },
+                        {
+                           "textlabel" : "",
+                           "tag" : "0008,0060"
+                        },
+                        {
+                           "textlabel" : "",
+                           "value" : "LEFT",
+                           "tag" : "LEFT"
+                        },
+                        {
+                           "textlabel" : "",
+                           "value" : "TOP",
+                           "tag" : "TOP"
+                        }
+                     ]
+                  },
+                  "value" : "L",
+                  "tag" : "0020,0062"
+               }
+            ]
+         }
+      },
+      { 
+         "CR" : {
+            "BOTTOMLEFT" : [
+               {
+                  "textlabel" : "",
+                  "value" : "LEFT",
+                  "tag" : "LEFT"
+               },
+               {
+                  "textlabel" : "",
+                  "value" : "TOP",
+                  "tag" : "TOP"
+               },
+               {
+                  "textlabel" : "",
+                  "value" : "IMAGEOFSERIES",
+                  "tag" : "IMAGEOFSERIES"
+               },
+               {
+                  "textlabel" : "Zoom: ",
+                  "value" : "ZOOM",
+                  "tag" : "ZOOM"
+               },
+               {
+                  "textlabel" : "WC: ",
+                  "value" : "WC",
+                  "tag" : "WC"
+               },
+               {
+                  "textlabel" : "WW: ",
+                  "value" : "WW",
+                  "tag" : "WW"
+               }
+            ],
+            "TOPRIGHT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0080"
+               },
+               {
+                  "textlabel" : "Serie: ",
+                  "tag" : "0020,0011"
+               },
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0060"
+               }
+            ],
+            "BOTTOMRIGHT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0018,0015"
+               }
+            ],
+            "TOPLEFT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0010,0010",
+                  "removecircumflex" : "true"
+               },
+               {
+                  "textlabel" : "ID: ",
+                  "tag" : "0010,0020"
+               },
+               {
+                  "textlabel" : "Fecha Nac: ",
+                  "tag" : "0010,0030"
+               },
+               {
+                  "textlabel" : "Acc. #: ",
+                  "tag" : "0008,0050"
+               },
+               {
+                  "textlabel" : "Fecha estudio: ",
+                  "tag" : "0008,0020"
+               },
+               {
+                  "textlabel" : "ID Estudio: ",
+                  "tag" : "0020,0010"
+               }
+            ]
+         }
+      },
+      {
+         "CT" : {
+            "BOTTOMLEFT" : [
+               {
+                  "textlabel" : "Angle",
+                  "value" : "ANGLE",
+                  "tag" : "ANGLE"
+               },
+               {
+                  "textlabel" : "",
+                  "value" : "IMAGEOFSERIES",
+                  "tag" : "IMAGEOFSERIES"
+               },
+               {
+                  "textlabel" : "InstanceNumber: ",
+                  "tag" : "0020,0013"
+               },
+               {
+                  "textlabel" : "Loc: ",
+                  "tag" : "0020,1041"
+               },
+               {
+                  "textlabel" : "Tlt: ",
+                  "tag" : "0018,1120"
+               },
+               {
+                  "textlabel" : "Thk: ",
+                  "tag" : "0018,0050"
+               },
+               {
+                  "textlabel" : "kV: ",
+                  "tag" : "0018,0060"
+               },
+               {
+                  "textlabel" : "mA: ",
+                  "tag" : "0018,1151"
+               },
+               {
+                  "textlabel" : "mAs: ",
+                  "tag" : "0018,1152"
+               }
+            ],
+            "TOPRIGHT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0080"
+               },
+               {
+                  "textlabel" : "Serie: ",
+                  "tag" : "0020,0011"
+               },
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0060"
+               }
+            ],
+            "BOTTOMRIGHT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0008",
+                  "index": 2
+               }
+            ],
+            "TOPLEFT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0010,0010",
+                  "removecircumflex" : "true"
+               },
+               {
+                  "textlabel" : "ID: ",
+                  "tag" : "0010,0020"
+               },
+               {
+                  "textlabel" : "Fecha Nac: ",
+                  "tag" : "0010,0030"
+               },
+               {
+                  "textlabel" : "Acc. #: ",
+                  "tag" : "0008,0050"
+               },
+               {
+                  "textlabel" : "Fecha estudio: ",
+                  "tag" : "0008,0020"
+               },
+               {
+                  "textlabel" : "ID Estudio: ",
+                  "tag" : "0020,0010"
+               },
+               {
+                  "textlabel" : "",
+                  "tag" : "0018,5100",
+               },
+               {
+                  "textlabel" : "Zoom: ",
+                  "value" : "ZOOM",
+                  "tag" : "ZOOM"
+               },
+               {
+                  "textlabel" : "WC: ",
+                  "value" : "WC",
+                  "tag" : "WC"
+               },
+               {
+                  "textlabel" : "WW: ",
+                  "value" : "WW",
+                  "tag" : "WW"
+               }
+
+
+            ]
+         }
+      },
+      {
+         "MR" : {
+            "BOTTOMLEFT" : [
+               {
+                  "textlabel" : "",
+                  "value" : "LEFT",
+                  "tag" : "LEFT"
+               },
+               {
+                  "textlabel" : "",
+                  "value" : "TOP",
+                  "tag" : "TOP"
+               },
+               {
+                  "textlabel" : "Angulo:",
+                  "value" : "ANGLE",
+                  "tag" : "ANGLE"
+               },
+               {
+                  "textlabel" : "",
+                  "value" : "IMAGEOFSERIES",
+                  "tag" : "IMAGEOFSERIES"
+               },
+               {
+                  "textlabel" : "InstanceNumber: ",
+                  "tag" : "0020,0013"
+               },
+               {
+                  "textlabel" : "Zoom: ",
+                  "value" : "ZOOM",
+                  "tag" : "ZOOM"
+               },
+               {
+                  "textlabel" : "WC: ",
+                  "value" : "WC",
+                  "tag" : "WC"
+               },
+               {
+                  "textlabel" : "WW: ",
+                  "value" : "WW",
+                  "tag" : "WW"
+               }
+            ],
+            "TOPRIGHT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0080"
+               },
+               {
+                  "textlabel" : "Serie: ",
+                  "tag" : "0020,0011"
+               },
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0060"
+               }
+            ],
+            "BOTTOMRIGHT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0008,0008",
+                  "index" : 2
+
+               }
+            ],
+            "TOPLEFT" : [
+               {
+                  "textlabel" : "",
+                  "tag" : "0010,0010",
+                  "removecircumflex" : "true"
+
+               },
+               {
+                  "textlabel" : "ID: ",
+                  "tag" : "0010,0020"
+               },
+               {
+                  "textlabel" : "Fecha Nac: ",
+                  "tag" : "0010,0030"
+               },
+               {
+                  "textlabel" : "Acc. #: ",
+                  "tag" : "0008,0050"
+               },
+               {
+                  "textlabel" : "Fecha estudio: ",
+                  "tag" : "0008,0020"
+               },
+               {
+                  "textlabel" : "ID Estudio: ",
+                  "tag" : "0020,0010"
+               },
+               {
+                  "textlabel" : "",
+                  "tag" : "0018,5100"
+               }
+
+            ]
+         }
+      }
+
+   ]
+}
