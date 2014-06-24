@@ -777,6 +777,9 @@ bool openHeaderFromFile(char * file, char * &output)
   bool lResult = false;
   DcmFileFormat fileFormat;
   OFCondition cond = fileFormat.loadFile(file, EXS_Unknown, EGL_noChange, 2048);
+  // remove pixel data before continuing
+  DcmTagKey pdata(0x7fe0,0x0010);
+  fileFormat.getDataset()->remove(pdata);
   if(cond.good())
   {
     std::stringbuf sb;
@@ -799,12 +802,10 @@ bool openHeaderFromBuffer(const void * buffer, ulong buflen, char * &output)
   dataBuf.setEos();
 
   DcmFileFormat fileFormat;
-  DcmTagKey tag(0x2050, 0x0010); // PresentationLUTSequence
-  dcmStopParsingAfterElement.set(tag);
-  fileFormat.transferInit();
   OFCondition cond = fileFormat.read(dataBuf);
-  fileFormat.transferEnd();
-  dcmStopParsingAfterElement.set(DCM_UndefinedTagKey);
+  // remove pixel data before continuing
+  DcmTagKey pdata(0x7fe0,0x0010);
+  fileFormat.getDataset()->remove(pdata);
   if(cond.good())
   {
     std::stringbuf sb;
@@ -815,7 +816,6 @@ bool openHeaderFromBuffer(const void * buffer, ulong buflen, char * &output)
     std::strcpy(output, sb.str().c_str());
     lResult = true;
   }
-
   return lResult;
 }
 
