@@ -777,6 +777,9 @@ bool openHeaderFromFile(char * file, char * &output)
   bool lResult = false;
   DcmFileFormat fileFormat;
   OFCondition cond = fileFormat.loadFile(file, EXS_Unknown, EGL_noChange, 2048);
+  // remove pixel data before continuing
+  DcmTagKey pdata(0x7fe0,0x0010);
+  fileFormat.getDataset()->remove(pdata);
   if(cond.good())
   {
     std::stringbuf sb;
@@ -819,7 +822,6 @@ bool openHeaderFromBuffer(const void * buffer, ulong buflen, char * &output)
     std::strcpy(output, sb.str().c_str());
     lResult = true;
   }
-
   return lResult;
 }
 
