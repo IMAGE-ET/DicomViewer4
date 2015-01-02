@@ -798,18 +798,22 @@ bool openHeaderFromBuffer(const void * buffer, ulong buflen, char * &output)
   dataBuf.setBuffer(buffer, buflen);
   dataBuf.setEos();
 
-  DcmFileFormat fileFormat;
+  DcmDataset dset;
+  OFCondition cond = dset.read(dataBuf, EXS_Unknown, EGL_noChange, buflen);
+  cond.text();
+  /*DcmFileFormat fileFormat;
   DcmTagKey tag(0x2050, 0x0010); // PresentationLUTSequence
   dcmStopParsingAfterElement.set(tag);
   fileFormat.transferInit();
   OFCondition cond = fileFormat.read(dataBuf);
   fileFormat.transferEnd();
   dcmStopParsingAfterElement.set(DCM_UndefinedTagKey);
+  */
   if(cond.good())
   {
     std::stringbuf sb;
     std::ostream out(&sb);
-    fileFormat.getDataset()->print(out);
+    dset.print(out);
     int len = strlen(sb.str().c_str()) + 1;
     output = new char[len];
     std::strcpy(output, sb.str().c_str());
